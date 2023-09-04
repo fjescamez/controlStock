@@ -89,9 +89,12 @@
 
                 <a href="productos.php">Productos</a>
 
+                <a href="notificaciones.php">Notificaciones</a>
+
                 <a href="seguimiento.php">Seguimiento</a>
 
                 <a href="registro.php">Registro</a>
+
             </div>
         </nav>
 
@@ -122,8 +125,7 @@
 
                     <div>
                         <label class="formulario-label">Categoria:</label>
-                        <!-- <input class="formulario-input" type="number" placeholder="Categoria Producto" name="id_categoria" value="<?php echo $id_categoria ?>">  -->
-                        <select name = "id_categoria" class="formulario-input">
+                        <select class="formulario-input formulario-select" name = "id_categoria">
                             <option value="">--Seleccionar--</option>
                             <?php while($categoria = mysqli_fetch_assoc($resultados_categorias)): ?>
                                 <option <?php echo $id_categoria === $categoria['id'] ? 'selected' : '';?> value="<?php echo $categoria['id'];?>"><?php echo $categoria['nombre'];?></option>

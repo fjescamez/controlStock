@@ -39,9 +39,12 @@ include "conexion.php";
 
                 <a href="productos.php">Productos</a>
 
+                <a href="notificaciones.php">Notificaciones</a>
+
                 <a href="seguimiento.php">Seguimiento</a>
 
                 <a href="registro.php">Registro</a>
+
             </div>
         </nav>
 

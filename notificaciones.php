@@ -24,6 +24,10 @@
 
     $conn->close();
 
+    if (isset($_POST['orden'])) { 
+        
+    }
+
 ?>
 
  
@@ -73,9 +77,7 @@
     <main class="main">
 
  
-
         <!--Aqui va el navegador de la pagina con las secciones que tiene-->
-
         <nav class="navegacion">
             <div class="navContenedor">
                 <a href="categorias.php">Categorias</a>
@@ -99,31 +101,29 @@
 
             <div class="bloque-titulo_boton">
 
-                <h2 class="titulo">Productos</h2>
+                <h2 class="titulo">Notificaciones</h2>
 
                 <a href="nuevo-producto.php">
 
-                    <div class="formulario-boton boton-titulo">Añadir</div>
+                    <div class="formulario-boton boton-titulo">Orden</div>
 
                 </a>
 
             </div>
 
+            <form action="orden" method="post">
             <table class="tabla-productos2">
 
                 <thead>
 
                     <tr>
+                        <th>Solicitar</th>
 
                         <th>Nombre</th>
 
                         <th>Categoría</th>
 
                         <th>Cantidad</th>
-
-                        <th>Actualizar</th>
-
-                        <th>Modificar</th>
 
                     </tr>
 
@@ -132,18 +132,13 @@
                 <tbody>
 
                     <?php while($productos = mysqli_fetch_assoc($resultadoConsulta)):?>
-
-        
+                            <td><input type="checkbox"></td>
 
                             <td><?php echo $productos['nombre']; ?></td>
 
                             <td><?php echo $productos['nombre_categoria']; ?></td>
 
                             <td><?php echo $productos['cantidad']; ?></td>
-
-                            <td><a id="agregarContador" class="lista-logo-caja2" href="producto-cantidad.php?id=<?php echo $productos['id'] ?>"></a></td>
-
-                            <td><a class="lista-logo2" href="modificar-producto.php?id=<?php echo $productos['id'] ?>"></a></td>
 
                         </tr>
 
@@ -154,6 +149,8 @@
                 </tbody>
 
             </table>
+            <input class="formulario-boton" type="submit" value="Orden" name="orden">
+            </form>
 
         </section>
 
