@@ -64,6 +64,7 @@ $conn->close();
             </div>
             <?php foreach ($errores as $error): ?>
                 <div class="alerta error">
+                    <div>tirar</div>
                     <?php echo $error; ?>
                 </div>
             <?php endforeach; ?>
